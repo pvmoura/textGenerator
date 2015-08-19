@@ -72,7 +72,7 @@ describe TextGenerator do
     end
   end
 
-  context "when a text is generated" do
+  context "when text is generated" do
     let(:text_arr) { tg.generate_text(data, tg.values_to_frequency_range(data)) }
     
     describe "#generate_text" do
@@ -82,11 +82,10 @@ describe TextGenerator do
       end
     end
 
-    describe "#pretty_print" do
-      let(:split_text) { tg.pretty_print(text_arr).split(".") }
+    describe "#printify_text" do
+      let(:split_text) { tg.printify_text(text_arr).split(".") }
 
       it "has 10 sentences" do
-        print split_text
         expect(split_text.size).to eq(10)
       end
 
@@ -94,12 +93,6 @@ describe TextGenerator do
         split_text.each do |sentence|
           expect(sentence.split(" ").size).to eq(10)
         end
-        # text_arr.each_with_index do |word, index|
-        #   expect(word).not_to be nil
-        #   if index % 10
-        #     expect(/\./.match(text_arr[index - 1])).not_to be nil
-        #   end
-        # end
       end
 
       it "has capitalized first words" do
@@ -110,6 +103,18 @@ describe TextGenerator do
         end
       end
     end
+
+    describe "#print" do
+      let(:print_text) { tg.print(tg.printify_text(text_arr)) }
+
+      it "has 80 characters per line" do
+        line_broken_text = print_text.split("\n")
+        line_broken_text.each do |line|
+          expect(line.size).to be <= 80
+        end
+      end
+    end
+    
   end
 
 end

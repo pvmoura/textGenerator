@@ -50,16 +50,16 @@ module TextGenerator
     text
   end
   
-  def wrap_line(text, line_width=80)
-    text.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1\n")
-  end
-  
-  def pretty_print (word_array, delim="\n")
+  def printify_text (word_array)
     (0..word_array.size - 1).step(10) do |index|
       word_array[index] = word_array[index].capitalize
       word_array[index - 1] = word_array[index - 1] + "."
     end
-    wrap_line(word_array.join(" "), 80) 
+    word_array.join(" ")
+  end
+
+  def print(text, line_width=80, delim="\n")
+    text.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1" + delim)
   end
 
 end

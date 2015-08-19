@@ -105,7 +105,7 @@ describe TextGenerator do
     end
 
     describe "#print" do
-      let(:print_text) { tg.print(tg.printify_text(text_arr)) }
+      let(:print_text) { tg.print(text_arr) }
 
       it "has 80 characters per line" do
         line_broken_text = print_text.split("\n")
@@ -114,7 +114,7 @@ describe TextGenerator do
         end
       end
     end
-    
+
   end
 
 end

@@ -58,8 +58,24 @@ module TextGenerator
     word_array.join(" ")
   end
 
-  def print(text, line_width=80, delim="\n")
+  def print(word_array, line_width=80, delim="\n")
+    text = printify_text(word_array)
     text.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1" + delim)
+  end
+
+  def run()
+    data = {}
+    while true
+      Dir.glob("*.txt").each do |filename|
+        clean_new_words = clean_text(read_file_to_array(filename))
+        histogram = hist(new_words)
+        data.merge!(histogram) {|k, oldv, newv| data[k] = oldv + newv }
+        ranges = values_to_frequency_range(data)
+        generated_words = generate_text(data, ranges)
+        puts print generated_words
+        FileUtils.mv filename, "./data"
+      end
+    end
   end
 
 end

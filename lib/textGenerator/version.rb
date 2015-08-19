@@ -1,0 +1,3 @@
+module TextGenerator
+  VERSION = "0.0.1"
+end

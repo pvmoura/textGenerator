@@ -1,0 +1,37 @@
+Your task is to write a program that generates random text, based on a
+continually updating set of sample input.
+
+Whenever a new file whose name ends with ".txt" is put into the
+directory where the program is running, the program should read in the
+content of the file (assume that it is just text), stripping out
+punctuation and ignoring case (you can assume that you only need to
+deal with letters in the latin alphabet, so A-Z, a-z), and then
+incorporating the words that remain into the programs storage.
+
+Your program is free to delete the file as soon as it reads it. After
+each file is read, it should generate a 100 word paragraph, composed
+of 10 sentences that each have 10 words each (and are capitalized /
+end with a period).
+
+The words that make up the sentences should be generated randomly
+according to the frequency of the words that have appeared in all of
+the input that has been read so far.
+
+The paragraph should be printed out to the screen, where each line is
+no longer than 80 characters, but words are never broken across lines.
+Your program should run forever, and keep repeating the above whenever
+a file is added to the directory.
+
+An example input is included as "corpus1.txt"; a possible run for
+adding that file could be what follows. Obviously each time it runs, a
+different output can result.
+
+And is disorder insurrections they sufficiently and they by in. Almost rapacious
+force us sensibility the the are creature fastidious. A power close fastidious a
+the princes that prejudicial nature. It it at of the virtue duties will will
+power. Is liberty lively is the brutal poison the all it. Knowledge vengeance
+intoxicates appears of thinking whether mind reason the. Vice disgusted
+unphilosophical be prejudices the of boldly its impressed. Have commerce of when
+remained every above the supreme rapacious. Reasoners are sensitive discharging
+possible brutal the steps in wars. The as than superior first reflecting are
+incompatible hold and.

@@ -63,12 +63,12 @@ module TextGenerator
     text.gsub(/(.{1,#{line_width}})(\s+|$)/, "\\1" + delim)
   end
 
-  def run()
+  def run(times=Float::INFINITY)
     data = {}
-    while true
+    1.upto(times) do
       Dir.glob("*.txt").each do |filename|
         clean_new_words = clean_text(read_file_to_array(filename))
-        histogram = hist(new_words)
+        histogram = hist(clean_new_words)
         data.merge!(histogram) {|k, oldv, newv| data[k] = oldv + newv }
         ranges = values_to_frequency_range(data)
         generated_words = generate_text(data, ranges)

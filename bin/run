@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+require "textGenerator"
+
+class RunTG
+	include TextGenerator
+end
+
+r = RunTG.new
+r.run

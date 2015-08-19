@@ -1,0 +1,14 @@
+when a new file is added to the directory:
+	enqueue new file
+	dequeue a file
+	check it's extension
+		if not .txt get rid of it, return to step 2
+	pipe file through
+		consume data
+		clean non-alphanumeric characters
+		recalculate frequencies
+		choose 10 ten-word sentences
+		print text to screen
+		delete file, or move to project's data folder
+		return to step 2
+first consume queue items, then add to queue

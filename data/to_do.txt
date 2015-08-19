@@ -1,0 +1,6 @@
+Give the project a Ruby structure
+File reading capabilities
+	Tie it to file system events -- new file added, principally
+	Consume the file, update the data store implementation
+	See if we can use concurrency or some sort of parallel processing
+Add tests

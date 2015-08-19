@@ -114,7 +114,15 @@ describe TextGenerator do
         end
       end
     end
+  end
 
+  describe "#run" do
+    before { FileUtils.mv "./data/corpus1.txt", "." }
+
+    it "runs" do
+      tg.run(1)
+      expect(File.exists?("./data/corpus1.txt")).to eq(true)
+    end
   end
 
 end

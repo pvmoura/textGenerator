@@ -1,0 +1,4 @@
+File reading
+	Tie program to file system events -- new file added, principally -- instead of infinite loop
+	See if we can use concurrency or some sort of parallel processing
+

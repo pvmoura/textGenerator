@@ -104,8 +104,8 @@ describe TextGenerator do
       end
     end
 
-    describe "#print" do
-      let(:print_text) { tg.print(text_arr) }
+    describe "#print_text" do
+      let(:print_text) { tg.print_text(text_arr) }
 
       it "has 80 characters per line" do
         line_broken_text = print_text.split("\n")
@@ -117,11 +117,12 @@ describe TextGenerator do
   end
 
   describe "#run" do
-    before { FileUtils.mv "./data/corpus1.txt", "." }
+    let(:filename) { "./data/corpus1.txt" }
+    before { FileUtils.mv filename, "." unless !File.exists?(filename) }
 
     it "runs" do
       tg.run(1)
-      expect(File.exists?("./data/corpus1.txt")).to eq(true)
+      expect(File.exists?(filename)).to eq(true)
     end
   end
 
